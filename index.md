@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+### Personal Information
 
-You can use the [editor on GitHub](https://github.com/alicialcaide/alicialcaide.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+- Email: alcaidelaserna@gmail.com
+- Languages: Spanish and English
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Education
 
-### Markdown
+- Business Management Degree - UMA
+- Business Intelligence and Big Data Analytics Master Degree - UOC
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Certifications
 
-```markdown
-Syntax highlighted code block
+- Data Analyst Associated - Microsoft
+- ANL Analyst - Microstrategy
 
-# Header 1
-## Header 2
-### Header 3
+### Experience
 
-- Bulleted
-- List
+## Minsait
+November 2018 - Currently
+_Madrid_
 
-1. Numbered
-2. List
+## Knockout Solutions
+_Málaga_
 
-**Bold** and _Italic_ and `Code` text
+March 2018 - October 2018
 
-[Link](url) and ![Image](src)
-```
+## Pinar Apartments 
+_Málaga_
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+March 2017 - March 2018
 
-### Jekyll Themes
+### Skills
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/alicialcaide/alicialcaide.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Business Intelligence
 
-### Support or Contact
+- Power BI Desktop / Power BI Service
+- Microstrategy 10.4
+- Qliksense 
+- Kibana
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Coding
+
+- SQL 
+- R
+- Python
+- PySpark
+
+## Repositories 
+
+- Cloudera (Hive | Impala)
+- SQL Server
+
+### Vision and methodology 
+
+- Continuous Learning and Improvement
+- International environment
