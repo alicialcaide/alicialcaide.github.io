@@ -16,16 +16,19 @@
 ## Experience
 
 **Minsait**
+
 _Madrid_
 
 November 2018 - Currently
 
 **Knockout Solutions**
+
 _Málaga_
 
 March 2018 - October 2018
 
 **Pinar Apartments**
+
 _Málaga_
 
 March 2017 - March 2018
