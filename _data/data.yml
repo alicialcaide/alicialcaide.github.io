@@ -142,14 +142,14 @@ experiences:
 #        authors: Edgar T. Irons
 #        conference: "Comm. ACM 4 (1961), 51–55"
 #
-skills:
-    title: Skills &amp; Proficiency
+#skills:
+    #title: Skills &amp; Proficiency
 
-    - Analytical mind and business acumen
-    - Strong math skills
-    - Problem-solving aptitude
-    - Excellent communication and presentation skills
-    #toolset:
+    #- Analytical mind and business acumen
+    #- Strong math skills
+    #- Problem-solving aptitude
+    #- Excellent communication and presentation skills
+    ##toolset:
     #  - name: Analytical mind and business acumen
     #    #level: 98%
     #
