@@ -3,8 +3,8 @@
 #
 
 sidebar:
-    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: True # set to False if you want education in main section instead of in sidebar
+    #about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    #education: True # set to False if you want education in main section instead of in sidebar
 
     # Profile information
     name: Alicia Alcaide
@@ -17,7 +17,7 @@ sidebar:
     #website: blog.webjeda.com #do not add http://
     linkedin: alicialcaide
     #xing: alandoe
-    github: sharu725
+    #github: sharu725
     #telegram: # add your nickname without '@' sign
     #gitlab:
     #bitbucket:
@@ -25,7 +25,7 @@ sidebar:
     #stack-overflow: # Number/Username, e.g. 123456/alandoe
     #codewars:
     #goodreads: # Number-Username, e.g. 123456-alandoe
-    pdf: http://www.africau.edu/images/default/sample.pdf
+    pdf: https://drive.google.com/file/d/1w-_12jDQmcjLWbW8xJg01LP-7OXU2Ug7/view?usp=sharing
 
     languages:
       - idiom: Spanish
@@ -48,7 +48,7 @@ sidebar:
         #link:
 
 career-profile:
-    title: Career Profile
+    title: About me
     summary: |
       Business Technology & Processes Consultant, specialized in Data Analysis, Big Data frameworks and
       Business Intelligence tools. Experience working in several clients: financial services, hospitality, start-up
@@ -145,18 +145,22 @@ experiences:
 skills:
     title: Skills &amp; Proficiency
 
-    toolset:
-      - name: Analytical mind and business acumen
-        #level: 98%
-
-      - name: Strong math skills
-        #level: 98%
-
-      - name: Problem-solving aptitude
-        #level: 98%
-
-      - name: Excellent communication and presentation skills
-        #level: 95%
+    - Analytical mind and business acumen
+    - Strong math skills
+    - Problem-solving aptitude
+    - Excellent communication and presentation skills
+    #toolset:
+    #  - name: Analytical mind and business acumen
+    #    #level: 98%
+    #
+    #  - name: Strong math skills
+    #    #level: 98%
+    #
+    #  - name: Problem-solving aptitude
+    #    #level: 98%
+    #
+    #  - name: Excellent communication and presentation skills
+    #    #level: 95%
 
 footer: >
     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
