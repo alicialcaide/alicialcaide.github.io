@@ -1,0 +1,162 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
+sidebar:
+    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    education: True # set to False if you want education in main section instead of in sidebar
+
+    # Profile information
+    name: Alicia Alcaide
+    tagline: Business Intelligence & Big Data Consultant
+    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+
+    # Sidebar links
+    email: alcaidelaserna@gmail.com
+    #phone: 012 345 6789
+    #website: blog.webjeda.com #do not add http://
+    linkedin: alicialcaide
+    #xing: alandoe
+    github: sharu725
+    #telegram: # add your nickname without '@' sign
+    #gitlab:
+    #bitbucket:
+    twitter: '@alicialcaide'
+    #stack-overflow: # Number/Username, e.g. 123456/alandoe
+    #codewars:
+    #goodreads: # Number-Username, e.g. 123456-alandoe
+    pdf: http://www.africau.edu/images/default/sample.pdf
+
+    languages:
+      - idiom: Spanish
+        level: Native
+
+      - idiom: English
+        level: Professional
+
+      #- idiom: French
+      #  level: Professional
+
+    #interests:
+      #- item: Climbing
+        #link:
+
+      #- item: Snowboarding
+        #link:
+
+      #- item: Cooking
+        #link:
+
+career-profile:
+    title: Career Profile
+    summary: |
+      Business Technology & Processes Consultant, specialized in Data Analysis, Big Data frameworks and
+      Business Intelligence tools. Experience working in several clients: financial services, hospitality, start-up
+      company. Enthusiastic about new technologies and IoT, focused on time management and productivity, as
+      well as continuous improvement through learning.
+education:
+    - degree: Master in Business Intelligence & Big Data
+      university: Universitat Oberta de Catalunya
+      time: 2018 - 2020
+      details: |
+        - Data Analytics - Machine Learning, Data Mining and Data Science
+        - Data Management
+        - Big Data - Batch and Streaming Processing
+    - degree: Bachelor in Business Management
+      university: University of Málaga
+      time: 2013 - 2017
+      details: |
+        Project Manager - Incoming Global Intenship Program - AIESEC
+           - Self Managed Learning - IKEA Málaga Talento
+           - Project Manager - Erasmus+ Youth Exchange
+           - Driving local companies to build digital presence - Google Activa tu
+            Ciudad
+Projects:
+experiences:
+    - role: BI & Big Data Consultant
+      time: 2018 - Present
+      company: Minsaiy by Indra
+      details: |
+        Knowledge of R, SQL and Python. Familiar with Agile methodology.
+        Technical leader in Microstrategy and Power BI projects, familiarity with BI tools (Google Data Studio)
+          - Interpret data, analyze results using statistical techniques and provide ongoing reports
+          - Develop and implement databases, data collection systems, data analytics and other strategies that
+            optimize statistical efficiency and quality
+          - Identify, analyze, and interpret trends or patterns in complex data sets
+          - Work with management to prioritize business and information needs
+          - Leading and developing a team of data analysts
+          - Oversee all analytics operations to correct discrepancies and ensure quality
+    - role: Corporate Accountant
+      time: 2017 - 2018
+      company: Pinar Apartments | Knockout Solutions
+      details: |
+        Proficient in spreadsheets, databases, MS Office, financial software applications and reporting tools (Power BI)
+          - Consolidate and analyze financial data (budgets, income statement forecasts, etc) taking into account
+            company’s goals and financial standing
+#projects:
+#    title: Projects
+#    intro: >
+#      You can list your side projects or open source libraries in this
+#      section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#      Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
+#    assignments:
+#      - title: Velocity
+#        link: "#hook"
+#        tagline: "A responsive website template designed to help startups promote, market and sell their products."
+#
+#      - title: DevStudio
+#        link: "#"
+#        tagline: "A responsive website template designed to help web developers/designers market their services."
+#
+#      - title: Tempo
+#        link: "#"
+#        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
+#
+#      - title: Atom
+#        link: "#"
+#        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
+#
+#      - title: Delta
+#        link: "#"
+#        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
+#
+#publications:
+#    title: Publications
+#    intro: |
+#      You can list your publications in this section. Lorem ipsum dolor sit
+#      amet, consectetur adipiscing elit. Vestibulum et ligula in nunc
+#      bibendum fringilla a eu lectus.
+#    papers:
+#      - title: The Art of Computer Programming
+#        link: "#"
+#        authors: Donald E. Knuth
+#        conference: Addison-Wesley, 1968
+#
+#      - title: "Genetic Programming III: Darwinian Invention &amp; Problem Solving"
+#        link: "#"
+#        authors: Koza, J.R., Andre, D., Bennett, F.H., Keane, M.A.
+#        conference: "Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edn. (1999)"
+#
+#      - title: A syntax directed compiler for Algol 60
+#        link: "#"
+#        authors: Edgar T. Irons
+#        conference: "Comm. ACM 4 (1961), 51–55"
+#
+skills:
+    title: Skills &amp; Proficiency
+
+    toolset:
+      - name: Analytical mind and business acumen
+        #level: 98%
+
+      - name: Strong math skills
+        #level: 98%
+
+      - name: Problem-solving aptitude
+        #level: 98%
+
+      - name: Excellent communication and presentation skills
+        #level: 95%
+
+footer: >
+    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
