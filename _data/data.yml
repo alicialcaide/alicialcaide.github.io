@@ -37,9 +37,9 @@ sidebar:
       #- idiom: French
       #  level: Professional
 
-    #interests:
-      #- item: Climbing
-        #link:
+    interests:
+      - item: Photography
+        link: https://www.flickr.com/photos/alialcaide
 
       #- item: Snowboarding
         #link:
