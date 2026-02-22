@@ -6,7 +6,7 @@ website:
   title: "Alicia Alcaide"
   site-url: https://www.alicialcaide.com
   favicon: favicon.ico
-  description: "Senior Data Analyst, lecturer and writer. Based in Madrid."
+  description: "Senior Data Analyst · AI Enthusiast · University Lecturer"
   open-graph: true
   twitter-card:
     creator: "@alicialcaide"
@@ -39,7 +39,7 @@ website:
 format:
   html:
     theme:
-      - litera
+      - flatly
       - custom.scss
     toc: false
     code-copy: true

@@ -9,12 +9,12 @@ $headings-font-weight: 700;
 $headings-line-height: 1.25;
 
 // ─── Colours ───────────────────────────────────────────────────
-$primary:           #2563eb;
+$primary:           #2c3e50;
 $body-color:        #0f172a;
 $text-muted:        #64748b;
 $body-bg:           #ffffff;
-$link-color:        #2563eb;
-$link-hover-color:  #1d4ed8;
+$link-color:        #2c3e50;
+$link-hover-color:  #18bc9c;
 
 // ─── UI ────────────────────────────────────────────────────────
 $border-color:     #e2e8f0;
@@ -24,7 +24,7 @@ $card-border-color: #e2e8f0;
 // ─── Navbar ────────────────────────────────────────────────────
 $navbar-bg:            rgba(255, 255, 255, 0.95);
 $navbar-fg:            #0f172a;
-$navbar-hl:            #2563eb;
+$navbar-hl:            #18bc9c;
 $navbar-font-size:     0.875rem;
 
 
@@ -131,7 +131,7 @@ $navbar-font-size:     0.875rem;
   border: none;
 
   &:hover {
-    background: #1d4ed8;
+    background: #18bc9c;
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
   }

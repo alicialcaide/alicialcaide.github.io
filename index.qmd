@@ -8,159 +8,110 @@ toc: false
 #| echo: false
 #| output: asis
 
-import yaml, pathlib, html
+import yaml, pathlib, html as _html
 
-p = yaml.safe_load(pathlib.Path("data/profile.yml").read_text())
-personal = p["personal"]
-contact  = p["contact"]
-about    = p["about"]
-```
+p       = yaml.safe_load(pathlib.Path("data/profile.yml").read_text())
+contact = p["contact"]
+about   = p["about"]
 
-<!-- ─── Hero ───────────────────────────────────────────────────── -->
+def e(s): return _html.escape(str(s))
+
+# ── Hero ──────────────────────────────────────────────────────────
+print("""
 <section class="hero container-xl">
-  <div class="hero-layout">
-    <div class="hero-text">
-      <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name">Alicia Alcaide</h1>
-      <p class="hero-tagline">Senior Data Analyst · Lecturer · Writing about data & tech</p>
-      <p class="hero-bio">
-        I work at IKEA's Global Digital Group and teach at UNIR. Curious about data,
-        AI, and the human side of technology. Occasionally I write about it here.
-      </p>
-      <div class="ctas">
-        <a href="blog/index.html" class="btn-primary-custom">Read my writing</a>
-        <a href="#about" class="btn-ghost-custom">About me →</a>
-      </div>
-    </div>
-    <div class="hero-avatar">
-      <img src="assets/images/profile.png" alt="Alicia Alcaide"
-           onerror="this.style.display='none'">
-    </div>
-  </div>
+<div class="hero-layout">
+<div class="hero-text">
+<p class="hero-greeting">Hi, I'm</p>
+<h1 class="hero-name">Alicia Alcaide</h1>
+<p class="hero-tagline">Senior Data Analyst · AI Enthusiast · University Lecturer</p>
+<p class="hero-bio">
+I turn data into decisions — and complexity into clarity.
+\n With 6+ years working across global teams, I help organizations unlock the real value hidden in their data, combining technical depth with a sharp business mindset.
+\n Always learning. Always curious. Always looking for the next challenge.</p>
+<div class="ctas">
+<a href="blog/index.html" class="btn-primary-custom">Read my writing</a>
+<a href="#about" class="btn-ghost-custom">About me &rarr;</a>
+</div>
+</div>
+<div class="hero-avatar">
+<img src="assets/images/profile.png" alt="Alicia Alcaide" onerror="this.style.display='none'">
+</div>
+</div>
 </section>
+""")
 
-<!-- ─── About ────────────────────────────────────────────────── -->
+# ── About ─────────────────────────────────────────────────────────
+paragraphs = "".join(f"<p>{e(para.strip())}</p>" for para in about.strip().split("\n\n"))
+print(f"""
 <div class="section-block section-block--alt" id="about">
 <div class="container-xl">
-
-```{python}
-#| echo: false
-#| output: asis
-
-print('<h2 class="section-heading">About me</h2>')
-for para in about.strip().split('\n\n'):
-    print(f'<p>{html.escape(para.strip())}</p>\n')
-```
-
+<h2 class="section-heading">About me</h2>
+{paragraphs}
 </div>
-</div>
-
-<!-- ─── Experience ───────────────────────────────────────────── -->
-<div class="section-block container-xl">
-
-```{python}
-#| echo: false
-#| output: asis
-
-experiences = p["experiences"]
-
-print('<h2 class="section-heading">Experience</h2>')
-print('<div class="timeline">')
-
-for exp in experiences:
-    role     = html.escape(exp["role"])
-    company  = html.escape(exp["company"])
-    time_    = html.escape(exp["time"])
-    location = html.escape(exp.get("location", ""))
-    details  = exp.get("details", [])
-
-    loc_html = f'<span class="tl-loc"> · {location}</span>' if location else ""
-
-    details_html = ""
-    if details:
-        items = "\n".join(f'<li>{html.escape(d)}</li>' for d in details)
-        details_html = f'<ul class="tl-details">{items}</ul>'
-
-    print(f"""
-<div class="timeline-item">
-  <div class="tl-dot"></div>
-  <div>
-    <div class="tl-header">
-      <h3 class="tl-role">{role}</h3>
-      <span class="tl-time">{time_}</span>
-    </div>
-    <p class="tl-company">{company}{loc_html}</p>
-    {details_html}
-  </div>
 </div>
 """)
 
-print('</div>')
-```
-
+# ── Experience ────────────────────────────────────────────────────
+items_html = ""
+for exp in p["experiences"]:
+    loc      = f'<span class="tl-loc"> &middot; {e(exp.get("location",""))}</span>' if exp.get("location") else ""
+    details  = "".join(f"<li>{e(d)}</li>" for d in exp.get("details", []))
+    det_html = f'<ul class="tl-details">{details}</ul>' if details else ""
+    items_html += f"""
+<div class="timeline-item">
+<div class="tl-dot"></div>
+<div>
+<div class="tl-header"><h3 class="tl-role">{e(exp["role"])}</h3><span class="tl-time">{e(exp["time"])}</span></div>
+<p class="tl-company">{e(exp["company"])}{loc}</p>
+{det_html}
 </div>
-
-<!-- ─── Skills & Certifications ──────────────────────────────── -->
-<div class="section-block section-block--alt">
-<div class="container-xl">
-<div class="two-col-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
-
-```{python}
-#| echo: false
-#| output: asis
-
-skills = p["skills"]
-certs  = p["certifications"]
-
-# ── Skills ──────────────────────────────────────────────────────
-print('<div>')
-print('<h2 class="section-heading">Skills</h2>')
-for group in skills:
-    cat   = html.escape(group["category"])
-    tags  = "".join(f'<span class="tag-pill">{html.escape(item)}</span>' for item in group["items"])
-    print(f'<div class="skill-group"><p class="skill-cat">{cat}</p><div class="skill-tags">{tags}</div></div>')
-print('</div>')
-
-# ── Certifications ───────────────────────────────────────────────
-print('<div>')
-print('<h2 class="section-heading">Certifications</h2>')
-for cert in certs:
-    name   = html.escape(cert["name"])
-    issuer = html.escape(cert["issuer"])
-    date   = html.escape(str(cert["date"]))
-    print(f'''<div class="cert-item">
-  <span class="cert-name">{name}</span>
-  <span class="cert-meta">{issuer} · {date}</span>
-</div>''')
-print('</div>')
-```
-
-</div>
-</div>
-</div>
-
-<!-- ─── Contact ──────────────────────────────────────────────── -->
-<div class="section-block container-xl" id="contact">
-
-```{python}
-#| echo: false
-#| output: asis
-
-email = html.escape(contact["email"])
-li    = html.escape(contact["linkedin"])
+</div>"""
 
 print(f"""
+<div class="section-block container-xl">
+<h2 class="section-heading">Experience</h2>
+<div class="timeline">
+{items_html}
+</div>
+</div>
+""")
+
+# ── Skills & Certifications ───────────────────────────────────────
+skills_html = ""
+for group in p["skills"]:
+    tags = "".join(f'<span class="tag-pill">{e(item)}</span>' for item in group["items"])
+    skills_html += f'<div class="skill-group"><p class="skill-cat">{e(group["category"])}</p><div class="skill-tags">{tags}</div></div>'
+
+certs_html = ""
+for cert in p["certifications"]:
+    certs_html += f'<div class="cert-item"><span class="cert-name">{e(cert["name"])}</span><span class="cert-meta">{e(cert["issuer"])} &middot; {e(cert["date"])}</span></div>'
+
+print(f"""
+<div class="section-block section-block--alt">
+<div class="container-xl">
+<div class="two-col-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+<div>
+<h2 class="section-heading">Skills</h2>
+{skills_html}
+</div>
+<div>
+<h2 class="section-heading">Certifications</h2>
+{certs_html}
+</div>
+</div>
+</div>
+</div>
+""")
+
+# ── Contact ───────────────────────────────────────────────────────
+print(f"""
+<div class="section-block container-xl" id="contact">
 <h2 class="section-heading">Let's talk</h2>
-<p style="color:var(--bs-secondary-color); margin-bottom:1.75rem; max-width:480px;">
-  I'm always happy to connect — about data, teaching, or just a good conversation
-  about technology.
-</p>
+<p style="color:var(--bs-secondary-color);margin-bottom:1.75rem;max-width:480px;">I'm always happy to connect &mdash; about data, teaching, or just a good conversation about technology.</p>
 <div class="ctas">
-  <a href="mailto:{email}" class="btn-primary-custom">Send an email</a>
-  <a href="https://linkedin.com/in/{li}" target="_blank"
-     rel="noopener noreferrer" class="btn-ghost-custom">LinkedIn ↗</a>
+<a href="mailto:{e(contact['email'])}" class="btn-primary-custom">Send an email</a>
+<a href="https://linkedin.com/in/{e(contact['linkedin'])}" target="_blank" rel="noopener noreferrer" class="btn-ghost-custom">LinkedIn &#x2197;</a>
+</div>
 </div>
 """)
 ```
-
-</div>
