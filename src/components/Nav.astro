@@ -1,0 +1,112 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Writing' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="nav-wrapper">
+  <nav class="nav container" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Alicia Alcaide – home">
+      Alicia Alcaide
+    </a>
+
+    <ul class="nav-links" role="list">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-link', { 'nav-link--active': currentPath === link.href }]}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href="https://linkedin.com/in/alicialcaide"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-link nav-link--cta"
+          aria-label="LinkedIn profile (opens in new tab)"
+        >
+          LinkedIn ↗
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+    max-width: var(--max-w-wide);
+  }
+
+  .nav-logo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .nav-link--active {
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+  }
+
+  .nav-link--cta {
+    color: var(--color-accent);
+  }
+
+  .nav-link--cta:hover {
+    background: var(--color-tag-bg);
+    color: var(--color-accent-hover);
+  }
+
+  @media (max-width: 480px) {
+    .nav-link--cta {
+      display: none;
+    }
+  }
+</style>
