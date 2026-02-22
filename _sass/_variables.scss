@@ -1,0 +1,27 @@
+// ─── Color Palette ───────────────────────────────────────────────
+$c-bg:              #ffffff;
+$c-bg-alt:          #f8fafc;
+$c-sidebar-bg:      #1e293b;
+$c-sidebar-border:  #2d3f55;
+$c-text:            #1e293b;
+$c-text-secondary:  #64748b;
+$c-accent:          #2563eb;
+$c-accent-hover:    #1d4ed8;
+$c-border:          #e2e8f0;
+$c-tag-bg:          #eff6ff;
+$c-tag-text:        #1d4ed8;
+$c-tag-border:      #bfdbfe;
+$c-timeline-line:   #e2e8f0;
+$c-timeline-dot:    #2563eb;
+
+// ─── Typography ──────────────────────────────────────────────────
+$font-stack:        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                    'Helvetica Neue', Arial, sans-serif;
+$font-size-base:    16px;
+$line-height:       1.6;
+
+// ─── Layout ──────────────────────────────────────────────────────
+$sidebar-width:     280px;
+$content-padding:   2.5rem 3rem;
+$border-radius:     8px;
+$border-radius-sm:  4px;

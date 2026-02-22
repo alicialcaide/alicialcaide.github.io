@@ -1,0 +1,160 @@
+@import "variables";
+
+// ─── Wrapper ─────────────────────────────────────────────────────
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+// ─── Sidebar ─────────────────────────────────────────────────────
+.sidebar {
+  width: $sidebar-width;
+  min-width: $sidebar-width;
+  background: $c-sidebar-bg;
+  color: #f1f5f9;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-inner {
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 100%;
+}
+
+// ─── Profile ─────────────────────────────────────────────────────
+.profile {
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+
+  i {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+}
+
+.profile-tagline {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.profile-location {
+  font-size: 0.78rem;
+  color: #64748b;
+  i {
+    margin-right: 0.3rem;
+    font-size: 0.7rem;
+  }
+}
+
+// ─── Sidebar Links ───────────────────────────────────────────────
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border-top: 1px solid $c-sidebar-border;
+  padding-top: 1.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  padding: 0.35rem 0;
+  transition: color 0.2s ease;
+  word-break: break-all;
+
+  i {
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    color: #475569;
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    color: #f1f5f9;
+    i { color: #93c5fd; }
+  }
+}
+
+// ─── Download Button ─────────────────────────────────────────────
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: $c-accent;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  border-radius: $border-radius;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin-top: auto;
+
+  &:hover {
+    background: $c-accent-hover;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+}
+
+// ─── Main Content ────────────────────────────────────────────────
+.main-content {
+  flex: 1;
+  padding: $content-padding;
+  background: $c-bg;
+  min-width: 0;
+}
+
+// ─── Footer ──────────────────────────────────────────────────────
+.footer {
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-size: 0.78rem;
+  color: $c-text-secondary;
+  border-top: 1px solid $c-border;
+  background: $c-bg-alt;
+
+  a {
+    color: $c-text-secondary;
+    &:hover { color: $c-accent; }
+  }
+}

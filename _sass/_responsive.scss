@@ -1,65 +1,68 @@
-/* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
+@import "variables";
 
-    body{
-        padding: 0;
-    }
-
-    .sidebar-wrapper {
-        position: static;
-        width: inherit;
-    }
-
-    .main-wrapper {
-        padding: 30px;
-    }
-
-    .main-wrapper .time {
-        position: static;
-        display: block;
-        margin-top: 5px;
-    }
-
-    .main-wrapper .upper-row {
-        margin-bottom: 0;
-    }
-
-
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-
+// ─── Tablet ───────────────────────────────────────────────────────
+@media (max-width: 860px) {
+  .main-content {
+    padding: 2rem 2rem;
+  }
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+// ─── Mobile ───────────────────────────────────────────────────────
+@media (max-width: 700px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
 
-    .skillset .level-title {
-        display: inline-block;
-        float: left;
-        width: 30%;
-        margin-bottom: 0;
-    }
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    position: relative;
+  }
 
-    .skillset .level-bar {
-        display: inline-block;
-        width: 70%;
-        float: left;
-        position: relative;
-        top: 1px;
-    }
+  .sidebar-inner {
+    padding: 1.75rem 1.5rem;
+  }
 
+  .profile {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1.25rem;
+  }
 
+  .avatar,
+  .avatar-placeholder {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    margin: 0;
+  }
+
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1.5rem 1.25rem;
+  }
 
-}
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 
-
-/* Ex-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1400px) {
-
+  .section-title {
+    font-size: 1.1rem;
+  }
 }
