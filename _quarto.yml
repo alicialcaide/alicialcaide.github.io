@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Alicia Alcaide"
+  site-url: https://www.alicialcaide.com
+  favicon: favicon.ico
+  description: "Senior Data Analyst, lecturer and writer. Based in Madrid."
+  open-graph: true
+  twitter-card:
+    creator: "@alicialcaide"
+
+  navbar:
+    pinned: true
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog/index.qmd
+        text: Writing
+    right:
+      - icon: linkedin
+        href: https://linkedin.com/in/alicialcaide
+        aria-label: LinkedIn
+        target: _blank
+      - icon: github
+        href: https://github.com/alicialcaide
+        aria-label: GitHub
+        target: _blank
+
+  page-footer:
+    center:
+      - text: "© 2026 Alicia Alcaide"
+      - text: "·"
+      - text: "Built with Quarto"
+        href: https://quarto.org
+
+format:
+  html:
+    theme:
+      - litera
+      - custom.scss
+    toc: false
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    link-external-newwindow: true
+    link-external-icon: false
+
+execute:
+  freeze: auto
+  warning: false
+  message: false

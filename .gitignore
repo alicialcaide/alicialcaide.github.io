@@ -1,14 +1,21 @@
-# Build output
-dist/
+# Quarto build output
 _site/
+.quarto/
+_freeze/
 
-# Astro
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Astro / Node (legacy)
+dist/
+node_modules/
 .astro/
 
-# Dependencies
-node_modules/
-
 # Jekyll (legacy)
+_site/
 .sass-cache/
 .jekyll-metadata
 .jekyll-cache

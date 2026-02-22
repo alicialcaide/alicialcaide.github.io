@@ -1,0 +1,107 @@
+---
+title: "5 things I wish I had known before entering the data world"
+description: "Some honest reflections from someone who came from Finance and ended up deep in data analytics, BI, and now AI."
+date: 2026-02-22
+categories: [career, analytics, reflections]
+---
+
+When I started my career, data was something that happened in spreadsheets. Then, gradually, it started happening everywhere — in databases, in dashboards, in pipelines I had no idea how to debug at 11pm.
+
+Here are five things I wish someone had told me earlier.
+
+## 1. SQL will outlive every trend
+
+I've seen tools come and go. But SQL? SQL is still there, quietly running everything. If I could go back and tell my 22-year-old self one thing: learn SQL *properly*. Not just `SELECT *`, but window functions, CTEs, query optimisation.
+
+```sql
+-- Example: year-over-year growth with a window function
+SELECT
+    date_trunc('month', order_date) AS month,
+    SUM(revenue)                    AS revenue,
+    LAG(SUM(revenue), 12) OVER (ORDER BY date_trunc('month', order_date))
+        AS revenue_prior_year,
+    ROUND(
+        100.0 * (SUM(revenue) - LAG(SUM(revenue), 12) OVER (
+            ORDER BY date_trunc('month', order_date)
+        )) / NULLIF(LAG(SUM(revenue), 12) OVER (
+            ORDER BY date_trunc('month', order_date)
+        ), 0), 1
+    ) AS yoy_growth_pct
+FROM orders
+GROUP BY 1
+ORDER BY 1;
+```
+
+It's not glamorous. But it's foundational.
+
+## 2. The question matters more than the answer
+
+Junior analysts spend a lot of energy answering questions. Senior analysts spend a lot of energy figuring out whether they're answering the *right* question.
+
+I've built beautiful dashboards that nobody used because they answered the wrong thing. The best data work starts before you open a notebook.
+
+## 3. A taste of what Python unlocks
+
+One of the things that changed my workflow the most was learning to do data exploration in Python. Here's a simple example — loading a dataset and getting meaningful stats in just a few lines:
+
+```{python}
+import pandas as pd
+
+# Simulated analyst workload data
+data = {
+    "task": ["Dashboard maintenance", "Ad-hoc requests", "Data cleaning",
+             "Analysis & insights", "Meetings & reporting", "Learning / exploration"],
+    "hours_per_week": [6, 9, 7, 5, 8, 3],
+    "value_rating": [3, 4, 2, 5, 2, 5],
+}
+
+df = pd.DataFrame(data).sort_values("value_rating", ascending=False)
+df["pct_of_week"] = (df["hours_per_week"] / df["hours_per_week"].sum() * 100).round(1)
+
+print(df[["task", "hours_per_week", "pct_of_week", "value_rating"]].to_string(index=False))
+```
+
+And now a quick chart — the kind of thing you'd share with a stakeholder:
+
+```{python}
+import plotly.express as px
+
+fig = px.bar(
+    df,
+    x="task",
+    y="hours_per_week",
+    color="value_rating",
+    color_continuous_scale=["#bfdbfe", "#2563eb"],
+    labels={"task": "", "hours_per_week": "Hours / week", "value_rating": "Value (1–5)"},
+    title="Where does analyst time actually go?",
+)
+
+fig.update_layout(
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    font_family="Inter, sans-serif",
+    title_font_size=15,
+    coloraxis_colorbar_title="Value",
+    xaxis_tickangle=-25,
+    showlegend=False,
+    margin=dict(t=50, b=10, l=0, r=0),
+)
+
+fig.show()
+```
+
+The uncomfortable truth: most analyst time goes to low-value tasks. That's not a people problem — it's a systems problem.
+
+## 4. Domain knowledge is your superpower
+
+The best data analyst I've ever worked with wasn't the best coder. They were the person who understood the *business* better than anyone else in the room. Data without context is just numbers. Domain knowledge is what turns it into insight.
+
+## 5. Burnout hides as productivity
+
+The data world rewards people who go deep, who say yes to every request, who run one more model, build one more report. But sustainability matters. You can't do good analytical work when you're running on empty.
+
+Protect your energy like you protect your data — carefully, intentionally, and with backups.
+
+---
+
+*This is the first post on my site. I'll be writing here about data, analytics, and the messy, interesting reality of working with information at scale.*

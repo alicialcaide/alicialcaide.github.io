@@ -1,0 +1,18 @@
+---
+title: "Writing"
+description: "Thoughts on data, analytics, AI, and the messy reality of working with information at scale."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+  fields: [date, title, description, categories, reading-time]
+page-layout: full
+toc: false
+---
+
+<p style="color:#64748b; font-size:1.0625rem; margin:-0.5rem 0 2rem; max-width:520px; line-height:1.7;">
+  Thoughts on data, analytics, AI, and the messy reality of working with
+  information at scale.
+</p>

@@ -1,0 +1,470 @@
+/*-- scss:defaults --*/
+
+// ─── Typography ────────────────────────────────────────────────
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.65;
+$headings-font-weight: 700;
+$headings-line-height: 1.25;
+
+// ─── Colours ───────────────────────────────────────────────────
+$primary:           #2563eb;
+$body-color:        #0f172a;
+$text-muted:        #64748b;
+$body-bg:           #ffffff;
+$link-color:        #2563eb;
+$link-hover-color:  #1d4ed8;
+
+// ─── UI ────────────────────────────────────────────────────────
+$border-color:     #e2e8f0;
+$border-radius:    6px;
+$card-border-color: #e2e8f0;
+
+// ─── Navbar ────────────────────────────────────────────────────
+$navbar-bg:            rgba(255, 255, 255, 0.95);
+$navbar-fg:            #0f172a;
+$navbar-hl:            #2563eb;
+$navbar-font-size:     0.875rem;
+
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// ─── Navbar ────────────────────────────────────────────────────
+.navbar {
+  border-bottom: 1px solid $border-color !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    padding: 0.4rem 0.75rem !important;
+    border-radius: 6px;
+    transition: background 0.15s !important;
+
+    &:hover {
+      background: #f8fafc;
+    }
+  }
+}
+
+// ─── Page layout ───────────────────────────────────────────────
+#quarto-content {
+  padding-top: 0 !important;
+}
+
+.page-columns {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// ─── Hero ──────────────────────────────────────────────────────
+.hero {
+  padding: 5rem 0 3.5rem;
+
+  .hero-greeting {
+    font-size: 1rem;
+    color: $text-muted;
+    margin-bottom: 0.3rem;
+  }
+
+  h1.hero-name {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+    border: none !important;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    color: $text-muted;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-bio {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .hero-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid $border-color;
+    flex-shrink: 0;
+  }
+}
+
+// ─── Buttons ───────────────────────────────────────────────────
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: $primary;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  border: none;
+
+  &:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  }
+}
+
+.btn-ghost-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid $border-color;
+  color: $body-color !important;
+  text-decoration: none !important;
+  background: transparent;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: #f8fafc;
+    border-color: $text-muted;
+  }
+}
+
+.ctas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+// ─── Section titles ─────────────────────────────────────────────
+h2.section-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: none !important;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background: $primary;
+    border-radius: 1px;
+  }
+}
+
+.section-block {
+  padding: 3.5rem 0;
+
+  &--alt {
+    background: #f8fafc;
+    margin: 0 -24px;
+    padding: 3.5rem 24px;
+  }
+}
+
+// ─── Timeline ───────────────────────────────────────────────────
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 0;
+    width: 1px;
+    background: $border-color;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.25rem;
+
+  &:last-child { padding-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -1.5rem;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $primary;
+    border: 2px solid #f8fafc;
+    box-shadow: 0 0 0 2px $primary;
+    transform: translateX(-4px);
+  }
+
+  .tl-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .tl-role {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .tl-time {
+    font-size: 0.775rem;
+    color: $text-muted;
+    background: #fff;
+    padding: 0.15rem 0.5rem;
+    border-radius: 100px;
+    border: 1px solid $border-color;
+    white-space: nowrap;
+  }
+
+  .tl-company {
+    font-size: 0.875rem;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+
+    .tl-loc {
+      color: $text-muted;
+      font-weight: 400;
+    }
+  }
+
+  .tl-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding-left: 0.9rem;
+      font-size: 0.875rem;
+      color: $text-muted;
+      line-height: 1.6;
+      margin-bottom: 0.3rem;
+
+      &::before {
+        content: '–';
+        position: absolute;
+        left: 0;
+        color: $primary;
+      }
+    }
+  }
+}
+
+// ─── Tags / pills ───────────────────────────────────────────────
+.tag-pill {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin: 0.2rem 0.2rem 0 0;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: $primary;
+    color: #fff;
+    border-color: $primary;
+  }
+}
+
+.skill-group {
+  margin-bottom: 1.5rem;
+}
+
+.skill-cat {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $text-muted;
+  margin-bottom: 0.6rem;
+}
+
+.skill-tags { line-height: 2; }
+
+// ─── Certifications ─────────────────────────────────────────────
+.cert-item {
+  padding: 0.75rem 1rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+  transition: border-color 0.15s;
+
+  &:hover { border-color: $primary; }
+
+  .cert-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .cert-meta {
+    font-size: 0.775rem;
+    color: $text-muted;
+  }
+}
+
+// ─── Post cards (blog listing) ──────────────────────────────────
+.post-card-custom {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  color: $body-color !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  background: #fff;
+
+  &:hover {
+    border-color: $primary;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .pc-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-bottom: 0.5rem;
+  }
+
+  .pc-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+
+  .pc-desc {
+    font-size: 0.875rem;
+    color: $text-muted;
+    line-height: 1.6;
+  }
+}
+
+// ─── Blog post page ─────────────────────────────────────────────
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $border-color;
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 1rem !important;
+    border: none !important;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: $text-muted;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: $text-muted !important;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  margin-bottom: 1.75rem;
+
+  &:hover { color: $primary !important; }
+
+  &::before { content: '←'; }
+}
+
+// ─── Code output ────────────────────────────────────────────────
+.cell-output-display {
+  margin: 1rem 0 1.5rem;
+}
+
+.callout {
+  border-radius: 6px !important;
+}
+
+// ─── Footer ─────────────────────────────────────────────────────
+.nav-footer {
+  border-top: 1px solid $border-color !important;
+  font-size: 0.8rem;
+  color: $text-muted;
+  background: #f8fafc !important;
+
+  a { color: $text-muted; &:hover { color: $primary; } }
+}
+
+// ─── Responsive ─────────────────────────────────────────────────
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 0 2rem;
+
+    .hero-layout {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .hero-avatar img {
+      width: 85px;
+      height: 85px;
+    }
+  }
+
+  .two-col-grid { grid-template-columns: 1fr !important; }
+}
